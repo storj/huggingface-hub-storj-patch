@@ -1,6 +1,6 @@
 # Monkey patch for HuggingFace Hub to download Git-LFS blobs from Storj
 
-The purpose of this patch is to demonstrate the transfer speed that can be achieved with `huggingface_hub` Python library when utilizing the power of the [Storj Decentralized Cloud Storage](https://storj.io).
+This patch aims to demonstrate the transfer speed that can be achieved with `huggingface_hub` Python library when utilizing the power of the [Storj Decentralized Cloud Storage](https://storj.io).
 
 HuggingFace Hub stores all large files in Git-LFS.
 
@@ -12,11 +12,11 @@ This monkey patch modifies the `huggingface_hub` library to redirect Git-LFS dow
 
 ## Prerequisites
 
-The Git-LFS blobs for the respective AI model must be replicated to a Storj bucket and share it with the [Storj Linksharing Service](https://docs.storj.io/dcs/api-reference/linksharing-service).
+The Git-LFS blobs for the respective AI model must be replicated to a Storj bucket and shared it with the [Storj Linksharing Service](https://docs.storj.io/dcs/api-reference/linksharing-service).
 
 We have already replicated the Git-FLS blobs of the [StarCoder](https://huggingface.co/bigcode/starcoder) model to a Storj bucket and shared it: https://link.storjshare.io/raw/juzlwaj7ovnst5gtkv2km3rkriha/lfs-huggingface
 
-If you want to use another AI model, you need to use your own Storj bucket, and then configure the patch to use it. See [Configuration](#hf_hub_storj_url_prefix)) for more details.
+If you want to use another AI model, you need to use your own Storj bucket and then configure the patch to use it. See [Configuration](#hf_hub_storj_url_prefix)) for more details.
 
 ## Installation
 
@@ -32,13 +32,13 @@ Then add the following import statement at the top, before any other import, of 
 import huggingface_hub_storj_patch
 ```
 
-Now you can run your script. If the patch is applied successfully, you will see it printing the URLs the `huggingface_hub` library is downloading from.
+Now you can run your script. If the patch is applied successfully, you will see it printing the URLs from which the `huggingface_hub` library is downloading.
 
 ![image](https://github.com/storj/huggingface-hub-storj-patch/assets/468091/ad50968c-7959-4a6a-8f63-540eb70372ba)
 
 ## Configuration
 
-The following environment variables can be used to configure the behavior of the patch.
+These environment variables can configure the behavior of the patch.
 
 ### HF_HUB_NO_STORJ
 
@@ -50,4 +50,4 @@ Configures how many parallel download connections are open to the Storj Linkshar
 
 ### HF_HUB_STORJ_URL_PREFIX
 
-Configures the URL to the shared Storj bucket where the Git-LFS blobs of the AI model is replicated. The default value is the bucket where the StarCoder model is replicated: https://link.storjshare.io/raw/juzlwaj7ovnst5gtkv2km3rkriha/lfs-huggingface
+Configures the URL to the shared Storj bucket that replicates the Git-LFS blobs of the AI model. The default value is the bucket that replicates the StarCoder model: https://link.storjshare.io/raw/juzlwaj7ovnst5gtkv2km3rkriha/lfs-huggingface
