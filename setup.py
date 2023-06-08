@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="huggingface_hub_storj_patch",
-    version="0.0.3",
+    version="0.0.6",
     author="Kaloyan Raev",
     author_email="kaloyan@storj.io",
     description="Monkey patch for huggingface_hub to download Git-LFS blobs from Storj",
