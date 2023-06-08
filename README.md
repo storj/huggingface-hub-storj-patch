@@ -16,7 +16,7 @@ The Git-LFS blobs for the respective AI model must be replicated to a Storj buck
 
 We have already replicated the Git-FLS blobs of the [StarCoder](https://huggingface.co/bigcode/starcoder) model to a Storj bucket and shared it: https://link.storjshare.io/raw/juzlwaj7ovnst5gtkv2km3rkriha/lfs-huggingface
 
-If you want to use another AI model, you need to use your own Storj bucket and then configure the patch to use it. See [Configuration](#hf_hub_storj_url_prefix)) for more details.
+If you want to use another AI model, you need to use your own Storj bucket and then configure the patch to use it. See [Configuration](#hf_hub_storj_url_prefix) for more details.
 
 ## Installation
 
